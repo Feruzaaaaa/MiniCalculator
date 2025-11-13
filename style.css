@@ -1,0 +1,115 @@
+/* --- General Styles --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #f9f9f9, #d9e8ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* --- Calculator Container --- */
+.calculator {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* --- Display --- */
+#display {
+    background: #1e1e1e;
+    color: white;
+    font-size: 2em;
+    text-align: right;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 55px;
+    overflow-x: auto;
+}
+
+/* --- Buttons Grid --- */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    background: #f0f0f0;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background: #e0e0e0;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: 2px solid #4a90e2;
+}
+
+.operator {
+    background: #ffce73;
+}
+
+.clear {
+    background: #ff7b7b;
+    color: white;
+}
+
+.equal {
+    background: #6fd87f;
+    color: white;
+    grid-column: span 2;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+/* --- History Section --- */
+.history {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.history h3 {
+    text-align: center;
+    margin: 5px 0;
+    color: #555;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#history-list li {
+    padding: 3px 5px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
