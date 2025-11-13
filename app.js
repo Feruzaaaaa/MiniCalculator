@@ -17,12 +17,27 @@ function createCalculator() {
         operand: null,
         operator: null,
         history: [],
-        inputDigit(d) { /* ... */ },
-        chooseOperator(op) { /* ... */ },
-        evaluate() { /* ... */ },
+        inputDigit(d) {
+            if (d === "." && this.current.includes(".")) return; // не допускаем двойную точку
+
+            // если текущее значение "0", заменяем его
+            if (this.current === "0" && d !== ".") {
+                this.current = d;
+            } else {
+                this.current += d;
+            }
+
+            updateDisplay(this.current);
+        },
+        chooseOperator(op) { /* добавим позже */ },
+        evaluate() { /* добавим позже */ },
         clear() { this.current = "0"; },
         allClear() { Object.assign(this, createCalculator()); }
     };
 }
+const calc = createCalculator();
+document.querySelectorAll("button[data-digit]").forEach(btn => {
+    btn.addEventListener("click", () => calc.inputDigit(btn.dataset.digit));
+});
 
 
