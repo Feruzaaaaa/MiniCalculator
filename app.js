@@ -5,6 +5,12 @@ const ops = {
     "/": (a, b) => b === 0 ? NaN : a / b
 };
 
+
+function updateDisplay(value) {
+    const display = document.getElementById("display");
+    if (display) display.textContent = value;
+}
+
 function createCalculator() {
     return {
         current: "0",
@@ -18,3 +24,5 @@ function createCalculator() {
         allClear() { Object.assign(this, createCalculator()); }
     };
 }
+
+
